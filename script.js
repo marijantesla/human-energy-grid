@@ -1,5 +1,126 @@
-const contractAddress = "0xTVOJA_ADRESA"; // ZAMIJENI SA TVOJOM ADRESOM!
-const contractABI = []; // DODAJ ABI OVDJE
+const contractAddress = "0x1EFD58CF6547Df949740b37d97405b2D87915369";
+const contractABI = [
+ {
+   "inputs": [],
+   "stateMutability": "nonpayable",
+   "type": "constructor"
+ },
+ {
+   "inputs": [
+     {
+       "internalType": "address",
+       "name": "to",
+       "type": "address"
+     },
+     {
+       "internalType": "uint256",
+       "name": "amount",
+       "type": "uint256"
+     }
+   ],
+   "name": "transfer",
+   "outputs": [],
+   "stateMutability": "nonpayable",
+   "type": "function"
+ },
+ {
+   "inputs": [],
+   "name": "decimals",
+   "outputs": [
+     {
+       "internalType": "uint8",
+       "name": "",
+       "type": "uint8"
+     }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+ },
+ {
+   "inputs": [],
+   "name": "feePercent",
+   "outputs": [
+     {
+       "internalType": "uint256",
+       "name": "",
+       "type": "uint256"
+     }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+ },
+ {
+   "inputs": [],
+   "name": "name",
+   "outputs": [
+     {
+       "internalType": "string",
+       "name": "",
+       "type": "string"
+     }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+ },
+ {
+   "inputs": [],
+   "name": "owner",
+   "outputs": [
+     {
+       "internalType": "address",
+       "name": "",
+       "type": "address"
+     }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+ },
+ {
+   "inputs": [],
+   "name": "symbol",
+   "outputs": [
+     {
+       "internalType": "string",
+       "name": "",
+       "type": "string"
+     }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+ },
+ {
+   "inputs": [],
+   "name": "totalSupply",
+   "outputs": [
+     {
+       "internalType": "uint256",
+       "name": "",
+       "type": "uint256"
+     }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+ },
+ {
+   "inputs": [
+     {
+       "internalType": "address",
+       "name": "",
+       "type": "address"
+     }
+   ],
+   "name": "balanceOf",
+   "outputs": [
+     {
+       "internalType": "uint256",
+       "name": "",
+       "type": "uint256"
+     }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+ }
+];
 
 let stepCount = 0;
 let intervalId;
@@ -48,6 +169,6 @@ async function rewardSteps(steps) {
    alert(`Dobili ste ${tokens * 0.7} QES! (30% fee za održavanje projekta)`);
  } catch (error) {
    console.error("Greška pri nagrađivanju:", error);
+   alert(`Greška: ${error.message || "Provjeri MetaMask i internet vezu"}`);
  }
 }
-
